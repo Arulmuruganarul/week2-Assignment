@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>User Registration Form</title>
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm" onsubmit="handleSubmit(event)">
+            <h1 class="main-heading">Registration Form </h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter Your Name" pattern="[a-zA-Z]{5,15}" required>
+            <p id="nameErrorMsg" class="errorMessage"></p>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter Your Email" name="email" required>
+            <p id="emailErrorMsg" class="errorMessage"></p>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter Your Password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+            <p id="passwordErrorMsg" class="errorMessage"></p>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" placeholder="Re-Enter Your Password" name="confirmPassword" required>
+            <p id="confirmPasswordErrorMsg" class="errorMessage"></p>
+
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <p id="dobErrorMsg" class="errorMessage"></p>
+            
+            <label for="gender">Gender:</label>
+            <div class="gender-options">
+                <input type="radio" id="male" name="gender" checked value="Male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female" required>
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="Other" required>
+                <label for="other">Other</label>
+            </div>
+            
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value = "India">India</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="UK">UK</option>
+            </select>
+            
+            
+            <div>
+                <input type="checkbox" id="terms" name="terms" onclick="toggleSubmitButton()" required>
+                <label for="terms">Are You accepting the Terms and Conditions?</label>
+            </div>
+
+            
+            
+        </form>
+
+        <button type="submit" form = "registrationForm" disabled>Submit</button>
+
+        <div id="result" class="hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
